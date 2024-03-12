@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "comment")
+@Table(name = "comments")
 public class Comment implements Serializable {
 
     private static final long serialVersionUID = -1885653560832153511L;
@@ -24,8 +24,8 @@ public class Comment implements Serializable {
     @Column
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Post.class, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "post_id")
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Post.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
     public Comment() {
@@ -68,8 +68,8 @@ public class Comment implements Serializable {
         return email;
     }
 
-    public void setEmail() {
-        this.email = post.getUser().getEmail();
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Post getPost() {

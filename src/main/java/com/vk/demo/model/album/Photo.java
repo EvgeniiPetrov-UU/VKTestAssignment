@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "photo")
+@Table(name = "photos")
 public class Photo implements Serializable {
 
     private static final long serialVersionUID = 6583496467368903309L;
@@ -24,7 +24,7 @@ public class Photo implements Serializable {
     @Column
     private String thumbnailUrl;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Album.class, cascade = CascadeType.REFRESH)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Album.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "album_id", nullable = false)
     private Album album;
 

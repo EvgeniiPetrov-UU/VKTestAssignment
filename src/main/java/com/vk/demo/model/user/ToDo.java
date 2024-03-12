@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "to_do")
+@Table(name = "to_dos")
 public class ToDo implements Serializable {
 
     private static final long serialVersionUID = 3337928356772612402L;

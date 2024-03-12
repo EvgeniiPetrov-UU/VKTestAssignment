@@ -1,5 +1,7 @@
 package com.vk.demo.model.user;
 
+import com.vk.demo.model.user.userInfo.Address;
+import com.vk.demo.model.user.userInfo.Company;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,7 +12,7 @@ import java.util.Collections;
 import java.util.Objects;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User implements UserDetails {
 
     private static final long serialVersionUID = -6462027522601369253L;
@@ -39,12 +41,10 @@ public class User implements UserDetails {
     @Nonnull
     private Role role;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "company_id")
+    @Column
     private Company company;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "address_id")
+    @Column
     private Address address;
 
     public User() {

@@ -9,5 +9,4 @@ public class VkTestAssignmentApplication {
     public static void main(String[] args) {
         SpringApplication.run(VkTestAssignmentApplication.class, args);
     }
-
 }

@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "album")
+@Table(name = "albums")
 public class Album implements Serializable {
 
     private static final long serialVersionUID = 4119018838091025028L;
@@ -20,7 +20,7 @@ public class Album implements Serializable {
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Album() {
