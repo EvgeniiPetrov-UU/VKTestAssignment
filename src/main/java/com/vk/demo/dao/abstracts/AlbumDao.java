@@ -1,6 +1,6 @@
 package com.vk.demo.dao.abstracts;
 
-import com.vk.demo.model.album.Album;
+import com.vk.demo.model.entity.album.Album;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

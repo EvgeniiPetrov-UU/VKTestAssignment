@@ -1,7 +1,7 @@
 package com.vk.demo.service.impl;
 
 import com.vk.demo.dao.abstracts.UserDao;
-import com.vk.demo.model.user.User;
+import com.vk.demo.model.entity.user.User;
 import com.vk.demo.service.abstracts.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

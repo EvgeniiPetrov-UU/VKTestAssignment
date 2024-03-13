@@ -1,16 +1,16 @@
-package com.vk.demo.model.post;
+package com.vk.demo.model.entity.album;
 
-import com.vk.demo.model.user.User;
+import com.vk.demo.model.entity.user.User;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "posts")
-public class Post implements Serializable {
+@Table(name = "albums")
+public class Album implements Serializable {
 
-    private static final long serialVersionUID = -5140337051781038205L;
+    private static final long serialVersionUID = 4119018838091025028L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,21 +19,17 @@ public class Post implements Serializable {
     @Column
     private String title;
 
-    @Column
-    private String body;
-
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Post() {
+    public Album() {
 
     }
 
-    public Post(Long id, String title, String body, User user) {
+    public Album(Long id, String title, User user) {
         this.id = id;
         this.title = title;
-        this.body = body;
         this.user = user;
     }
 
@@ -53,14 +49,6 @@ public class Post implements Serializable {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
     public User getUser() {
         return user;
     }
@@ -71,10 +59,9 @@ public class Post implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Post{");
+        final StringBuilder sb = new StringBuilder("Album{");
         sb.append("id=").append(id);
         sb.append(", title='").append(title).append('\'');
-        sb.append(", body='").append(body).append('\'');
         sb.append('}');
         return sb.toString();
     }
@@ -83,12 +70,12 @@ public class Post implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Post post = (Post) o;
-        return id.equals(post.id) && title.equals(post.title) && body.equals(post.body);
+        Album album = (Album) o;
+        return id.equals(album.id) && title.equals(album.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, body);
+        return Objects.hash(id, title);
     }
 }

@@ -39,7 +39,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
                         authorizationManagerRequestMatcherRegistry
                                 .requestMatchers("/api/posts/**")
-                                .hasAnyRole("POST", "ADMIN")
+//                                .hasAnyRole("POST", "ADMIN")
+                                .permitAll()
                                 .requestMatchers("/api/users/**")
                                 .hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/api/albums/**")

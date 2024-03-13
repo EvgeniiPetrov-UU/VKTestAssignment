@@ -1,4 +1,4 @@
-package com.vk.demo.model.album;
+package com.vk.demo.model.entity.album;
 
 import jakarta.persistence.*;
 

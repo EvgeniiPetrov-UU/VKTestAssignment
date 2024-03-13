@@ -1,4 +1,4 @@
-package com.vk.demo.model.post;
+package com.vk.demo.model.entity.post;
 
 import jakarta.persistence.*;
 

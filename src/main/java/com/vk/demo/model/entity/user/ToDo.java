@@ -1,4 +1,4 @@
-package com.vk.demo.model.user;
+package com.vk.demo.model.entity.user;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;

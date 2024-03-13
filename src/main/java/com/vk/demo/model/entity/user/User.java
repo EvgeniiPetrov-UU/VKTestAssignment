@@ -1,7 +1,7 @@
-package com.vk.demo.model.user;
+package com.vk.demo.model.entity.user;
 
-import com.vk.demo.model.user.userInfo.Address;
-import com.vk.demo.model.user.userInfo.Company;
+import com.vk.demo.model.entity.user.userInfo.Address;
+import com.vk.demo.model.entity.user.userInfo.Company;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;

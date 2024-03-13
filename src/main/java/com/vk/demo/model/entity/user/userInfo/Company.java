@@ -1,4 +1,4 @@
-package com.vk.demo.model.user.userInfo;
+package com.vk.demo.model.entity.user.userInfo;
 
 import java.io.Serializable;
 import java.util.Objects;
