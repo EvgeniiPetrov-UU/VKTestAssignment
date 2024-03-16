@@ -1,6 +1,6 @@
 package com.vk.demo.controller;
 
-import com.vk.demo.service.abstracts.AlbumService;
+import com.vk.demo.service.entity.abstracts.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 

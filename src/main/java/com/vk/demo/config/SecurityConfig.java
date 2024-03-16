@@ -1,6 +1,6 @@
 package com.vk.demo.config;
 
-import com.vk.demo.service.impl.UserServiceImpl;
+import com.vk.demo.service.entity.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,7 +42,8 @@ public class SecurityConfig {
 //                                .hasAnyRole("POST", "ADMIN")
                                 .permitAll()
                                 .requestMatchers("/api/users/**")
-                                .hasAnyRole("USER", "ADMIN")
+//                                .hasAnyRole("USER", "ADMIN")
+                                .permitAll()
                                 .requestMatchers("/api/albums/**")
                                 .hasAnyRole("ALBUM", "ADMIN")
                                 .anyRequest().permitAll())

@@ -1,12 +1,14 @@
-package com.vk.demo.service.impl;
+package com.vk.demo.service.entity.impl;
 
 import com.vk.demo.dao.abstracts.UserDao;
 import com.vk.demo.model.entity.user.User;
-import com.vk.demo.service.abstracts.UserService;
+import com.vk.demo.service.entity.abstracts.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -18,8 +20,19 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public User getUserByUsername(String name) {
-        return userDao.findUserByUsername(name);
+    public Optional<User> getUserById(Long id) {
+//        UserDto userDto = userDtoService.getUserDtoById(id);
+//        User user = new User();
+//
+//        user.setId(userDto.getId());
+//        user.setEmail(userDto.getEmail());
+//        user.setEntityUsername(userDto.getUsername());
+//        user.setName(userDto.getName());
+//        user.setPhone(userDto.getPhone());
+//        user.setWebsite(userDto.getWebsite());
+//        user.setCompany(userDto.getCompany());
+//        user.setAddress(userDto.getAddress());
+        return userDao.findById(id);
     }
 
     @Override

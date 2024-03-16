@@ -1,6 +1,6 @@
-package com.vk.demo.service.impl;
+package com.vk.demo.service.entity.impl;
 
-import com.vk.demo.service.abstracts.PhotoService;
+import com.vk.demo.service.entity.abstracts.PhotoService;
 import org.springframework.stereotype.Service;
 
 @Service
